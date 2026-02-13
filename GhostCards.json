@@ -1,0 +1,14 @@
+{
+    "id": "GhostCards",
+    "name": "Ghost Cards",
+    "author": ["GhostSalt"],
+    "description": "A mod that adds cards with my OC Ghost on them! Includes a deck skin, and if you have Malverk, a Joker skin.",
+    "prefix": "ghostcards",
+    "main_file": "main.lua",
+    "badge_colour": "d66ea9",
+    "dependencies": [
+        "Steamodded (>=1.0.0~BETA-0711a)"
+    ],
+    "version": "1.1.0",
+    "priority": 0
+}

@@ -1,13 +1,3 @@
---- STEAMODDED HEADER
---- MOD_NAME: Ghost Cards
---- MOD_ID: GhostCards
---- PREFIX: ghostcards
---- MOD_AUTHOR: [GhostSalt]
---- MOD_DESCRIPTION: A mod that adds cards with my OC Ghost on them! Includes a deck skin, and if you have Malverk, a Joker skin.
---- LOADER_VERSION_GEQ: 1.0.0
---- VERSION: 1.0.0
---- BADGE_COLOR: 888888
-
 local atlas_key = 'ghostcards_GhostCards'
 local atlas_path = 'GhostCards.png'
 local atlas_path_hc = 'GhostCardsHC.png'
