@@ -1,36 +1,35 @@
 --- STEAMODDED HEADER
 --- MOD_NAME: Ghost Cards
 --- MOD_ID: GhostCards
---- PREFIX: GS
+--- PREFIX: ghostcards
 --- MOD_AUTHOR: [GhostSalt]
---- MOD_DESCRIPTION: A mod that adds cards with my OC Ghost on them!
+--- MOD_DESCRIPTION: A mod that adds cards with my OC Ghost on them! Includes a deck skin, and if you have Malverk, a Joker skin.
 --- LOADER_VERSION_GEQ: 1.0.0
 --- VERSION: 1.0.0
 --- BADGE_COLOR: 888888
 
-local atlas_key = 'GS_GhostCards'                                                               -- Format: PREFIX_KEY
--- See end of file for notes
-local atlas_path =
-'GhostCards.png'                                                                                -- Filename for the image in the asset folder
-local atlas_path_hc =
-'GhostCardsHC.png'                                                                              -- Filename for the high-contrast version of the texture, if existing
+local atlas_key = 'ghostcards_GhostCards'
+local atlas_path = 'GhostCards.png'
+local atlas_path_hc = 'GhostCardsHC.png'
 
-local suits = { 'hearts', 'clubs', 'diamonds', 'spades' }                                       -- Which suits to replace
-local ranks = { '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace", } -- Which ranks to replace
+local suits = { 'hearts', 'clubs', 'diamonds', 'spades' }
+local ranks = { '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace", }
 
-local description =
-'Ghost'                                                                                         -- English-language description, also used as default
+local description = "Ghost"
 
------------------------------------------------------------
--- You should only need to change things above this line --
------------------------------------------------------------
+SMODS.Atlas {
+  key = "modicon",
+  path = "GhostCardsIcon.png",
+  px = 34,
+  py = 34
+}
 
 SMODS.Atlas {
     key = atlas_key .. '_lc',
     px = 71,
     py = 95,
     path = atlas_path,
-    prefix_config = { key = false }, -- See end of file for notes
+    prefix_config = { key = false }
 }
 
 if atlas_path_hc then
@@ -39,7 +38,7 @@ if atlas_path_hc then
         px = 71,
         py = 95,
         path = atlas_path_hc,
-        prefix_config = { key = false }, -- See end of file for notes
+        prefix_config = { key = false }
     }
 end
 
@@ -63,22 +62,16 @@ if next(SMODS.find_mod('malverk')) then
         set = 'Joker',
         path = 'GhostJokers.png',
         loc_txt = { name = 'Ghost Jokers' },
-        display_pos = 'j_banner',
+        display_pos = 'j_flash',
         original_sheet = true
     })
 
     TexturePack({
         key = 'ghost_jokers_main',
-        textures = { 'GS_ghost_jokers' },
+        textures = { 'ghostcards_ghost_jokers' },
         loc_txt = {
             name = 'Ghost Jokers',
             text = { 'A set of Jokers', 'featuring {C:dark_edition}Ghost{},', 'instead of {C:red}Jimbo{}!' }
         }
     })
 end
-
--- Notes:
-
--- The current version of Steamodded has a bug with prefixes in mods including `DeckSkin`s.
--- By manually including the prefix in the atlas' key, this should keep the mod functional
--- even after this bug is fixed.
