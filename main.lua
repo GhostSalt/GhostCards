@@ -214,68 +214,31 @@ if next(SMODS.find_mod("malverk")) then
             },
             dynamic_display = true
         })
+    end
 
+    
 
+    if next(SMODS.find_mod("Bakery")) then
+        AltTexture({
+            key = "Bakery",
+            set = "Joker",
+            path = "GhostJokersBakery.png",
+            loc_txt = { name = "Jokers" },
+            original_sheet = true,
+            keys = ghostcards_find_all_on_sheet("Bakery", "Bakery_Bakery"),
+            display_pos = "j_Bakery_Snowball"
+        })
 
-
-
-
-
-        --[[SMODS.Atlas {
-            key = "cry_atlasone",
-            path = "GhostJokersCryptidOne.png",
-            px = 71,
-            py = 95,
-            raw_key = true
-        }
-        SMODS.Atlas {
-            key = "cry_atlastwo",
-            path = "GhostJokersCryptidTwo.png",
-            px = 71,
-            py = 95,
-            raw_key = true
-        }
-        SMODS.Atlas {
-            key = "cry_atlasthree",
-            path = "GhostJokersCryptidThree.png",
-            px = 71,
-            py = 95,
-            raw_key = true
-        }
-        SMODS.Atlas {
-            key = "cry_cry_misc",
-            path = "GhostJokersCryptidMisc.png",
-            px = 71,
-            py = 95,
-            raw_key = true
-        }
-        SMODS.Atlas {
-            key = "cry_jimball",
-            path = "GhostJokersCryptidJimball.png",
-            px = 71,
-            py = 95,
-            raw_key = true
-        }
-        SMODS.Atlas {
-            key = "cry_atlasepic",
-            path = "GhostJokersCryptidEpic.png",
-            px = 71,
-            py = 95,
-            raw_key = true
-        }
-        SMODS.Atlas {
-            key = "cry_exotic",
-            path = "GhostJokersCryptidExotic.png",
-            px = 71,
-            py = 95,
-            raw_key = true
-        }
-        SMODS.Atlas {
-            key = "cry_atlasspooky",
-            path = "GhostJokersCryptidSpooky.png",
-            px = 71,
-            py = 95,
-            raw_key = true
-        }]] --
+        TexturePack({
+            key = "ghost_jokers_bakery",
+            textures = {
+                "ghostcards_Bakery"
+            },
+            loc_txt = {
+                name = "Ghost Jokers (Bakery)",
+                text = { "{C:dark_edition}Ghost{} has invaded", "{C:attention}Bakery{}!", "{C:inactive}(When disabling,{}", "{C:inactive}restart the game){}" }
+            },
+            dynamic_display = true
+        })
     end
 end
