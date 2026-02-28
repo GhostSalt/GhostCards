@@ -241,4 +241,30 @@ if next(SMODS.find_mod("malverk")) then
             dynamic_display = true
         })
     end
+
+    
+
+    if next(SMODS.find_mod("artbox")) then
+        AltTexture({
+            key = "artbox",
+            set = "Joker",
+            path = "GhostJokersArtBox.png",
+            loc_txt = { name = "Jokers" },
+            original_sheet = true,
+            keys = ghostcards_find_all_on_sheet("artbox", "artb_joker_atlas"),
+            display_pos = "j_artb_sadcube"
+        })
+
+        TexturePack({
+            key = "ghost_jokers_artbox",
+            textures = {
+                "ghostcards_artbox"
+            },
+            loc_txt = {
+                name = "Ghost Jokers (ArtBox)",
+                text = { "{C:dark_edition}Ghost{} has invaded", "{C:attention}ArtBox{}!", "{C:inactive}(When disabling,{}", "{C:inactive}restart the game){}" }
+            },
+            dynamic_display = true
+        })
+    end
 end
