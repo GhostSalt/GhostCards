@@ -267,4 +267,41 @@ if next(SMODS.find_mod("malverk")) then
             dynamic_display = true
         })
     end
+
+    
+
+    if next(SMODS.find_mod("aikoyorisshenanigans")) then
+        AltTexture({
+            key = "aikos",
+            set = "Joker",
+            path = "GhostJokersAikos.png",
+            loc_txt = { name = "Jokers" },
+            original_sheet = true,
+            keys = ghostcards_find_all_on_sheet("aikoyorisshenanigans", "akyrs_AikoyoriJokers"),
+            display_pos = "j_akyrs_henohenomoheji"
+        })
+        AltTexture({
+            key = "aikosguest",
+            set = "Joker",
+            path = "GhostJokersAikosGuest.png",
+            loc_txt = { name = "Guest Jokers" },
+            original_sheet = true,
+            keys = ghostcards_find_all_on_sheet("aikoyorisshenanigans", "akyrs_guestJokerArts"),
+            display_pos = "j_akyrs_maxwells_notebook"
+        })
+
+        TexturePack({
+            key = "ghost_jokers_aikos",
+            textures = {
+                "ghostcards_aikos",
+                
+                "ghostcards_aikosguest"
+            },
+            loc_txt = {
+                name = "Ghost Jokers (Aikoyori's Shenanigans)",
+                text = { "{C:dark_edition}Ghost{} has invaded", "{C:attention}Aikoyori's Shenanigans{}!", "{C:inactive}(When disabling,{}", "{C:inactive}restart the game){}" }
+            },
+            dynamic_display = true
+        })
+    end
 end
